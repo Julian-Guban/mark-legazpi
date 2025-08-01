@@ -227,7 +227,13 @@ body {
 }
 
 .bg-card {
-  background-color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.bg-card > li > h3, 
+.bg-card > li {
+  color: var(--accent-color);
+  font-weight: bolder;
 }
 
 .bg-dark {
@@ -461,6 +467,33 @@ li.none-bullet {
     font-size: large;
     text-wrap: nowrap;
   }
+
+
+  a.btn>span {
+    color: #fffcdc;
+    transition: opacity 0.3s ease;
+    /* Smooth transition for opacity */
+  }
+
+  a.btn.active:hover {
+    border: 1px solid #fffcdc;
+  }
+
+  a.btn:hover>span {
+    color: #35b276;
+  }
+
+  .active {
+    border: 1px solid #fffcdc;
+  }
+
+  a.btn.active>img {
+    display: flex;
+    filter: invert(3);
+    /* Apply filter effect */
+    transition: opacity 0.3s ease, visibility 0s 0s;
+    /* Smooth transition for opacity and visibility */
+  }
 }
 
 @media (max-width: 800px) {
@@ -468,21 +501,6 @@ li.none-bullet {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .window {
-    width: 95% !important;
-    height: 80px !important;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: left !important;
-    align-items: center !important;
-    overflow: hidden;
-  }
-
-  .panel {
-    z-index: 2;
-    background-color: #2B2B3C;
   }
 
   header {
@@ -583,7 +601,7 @@ li.none-bullet {
     content: " ";
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.473);
+    background-color: rgba(255, 255, 255, 0.473);
   }
 
   .hero-text {
@@ -598,6 +616,12 @@ li.none-bullet {
     align-items: center !important;
     text-align: center;
   }
+/* 
+  .hero-text>*>*,
+  .hero-text>* {
+    color: #fffcdc !important;
+  } */
+
   .files {
     flex-direction: column !important;
     align-content: center;
@@ -619,11 +643,11 @@ li.none-bullet {
     width: 100% !important;
   }
 
-  .reverse-card{
+  .reverse-card {
     padding: 10px !important;
   }
 
-  #Documentation > .flex-row{
+  #Documentation>.flex-row {
     flex-direction: column !important;
   }
 }
@@ -693,7 +717,7 @@ li.none-bullet {
     width: 300px !important;
   }
 
-  .footer-text{
+  .footer-text {
     font-size: 10px;
     text-wrap: nowrap;
     text-overflow: ellipsis;
@@ -870,7 +894,8 @@ a.btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Prevents scrolling of modal */
+  overflow: hidden;
+  /* Prevents scrolling of modal */
   z-index: 100;
 }
 
@@ -883,13 +908,14 @@ a.btn {
   z-index: -1;
 }
 
-.modal.active > .modal-content {
+.modal.active>.modal-content {
   width: fit-content;
   height: 90vh;
   background-color: var(--highlight-color);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  overflow-y: auto; /* This allows scrolling inside the modal */
+  overflow-y: auto;
+  /* This allows scrolling inside the modal */
   z-index: 3;
 }
 
