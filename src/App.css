@@ -16,7 +16,7 @@
 
 :root {
   /* Background and General Colors */
-  --bg-color: black;
+  --bg-color: rgb(255, 255, 255);
   /* light greenish background */
   --panel-color: #14282D;
   /* light pastel green for panels */
@@ -30,11 +30,11 @@
   /* Accent and Highlight Colors */
   --accent-color: #5ec57e;
   /* soft green accent */
-  --highlight-color: #b8e28a;
+  --highlight-color: #94b86e;
   /* lighter pastel green highlight */
 
   /* Text Colors */
-  --text-color: #fffcdc;
+  --text-color: #000000;
   /* dark neutral for primary text */
   --text-muted: #282329;
   /* muted dark color for secondary text */
@@ -268,7 +268,7 @@ body {
 }
 
 a.btn>span {
-  color: white;
+  color: rgb(0, 0, 0);
   transition: opacity 0.3s ease;
   /* Smooth transition for opacity */
 }
@@ -278,7 +278,7 @@ a.btn>img {
 }
 
 a.btn.active:hover {
-  border: 1px solid rgba(255, 255, 255, 0.632);
+  border: 1px solid rgb(4, 4, 4);
   border-radius: 10px;
 }
 
@@ -287,7 +287,7 @@ a.btn:hover>span {
 }
 
 .active {
-  border: 1px solid white;
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .active>span {
@@ -296,7 +296,7 @@ a.btn:hover>span {
 
 a.btn.active>img {
   display: flex;
-  filter: invert(3);
+  /* filter: invert(3); */
   /* Apply filter effect */
   transition: opacity 0.3s ease, visibility 0s 0s;
   /* Smooth transition for opacity and visibility */
@@ -788,7 +788,7 @@ a.btn {
 
 #Hero::after {
   content: " ";
-  background-color: var(--highlight-color);
+  background-color: var(--panel-color);
   position: absolute;
   inset: 0;
   clip-path: polygon(0 0,
@@ -815,8 +815,8 @@ a.btn {
 
 #Hero::before {
   content: " ";
-  border: 3px solid var(--highlight-color);
-  background-color: var(--panel-color);
+  border: 3px solid var(--panel-color);
+  background-color: var(--highlight-color);
   position: absolute;
   inset: 0;
   bottom: 5px;
@@ -856,6 +856,7 @@ a.btn {
   gap: 10px;
   justify-content: center;
 }
+
 /* Existing modal CSS */
 .modal {
   display: none;
@@ -885,7 +886,7 @@ a.btn {
 .modal.active > .modal-content {
   width: fit-content;
   height: 90vh;
-  background-color: var(--panel-color);
+  background-color: var(--highlight-color);
   border: 1px solid var(--border-color);
   border-radius: 20px;
   overflow-y: auto; /* This allows scrolling inside the modal */
@@ -901,7 +902,7 @@ a.btn {
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
-  background-color: var(--panel-color);
+  background-color: var(--highlight-color);
 }
 
 .modal-close {
